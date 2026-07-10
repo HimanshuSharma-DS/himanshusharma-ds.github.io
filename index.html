@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Himanshu Sharma | Portfolio</title>
+  <style>
+
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      background-color: #1e3a5f;
+      padding: 14px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo {
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav ul a {
+      color: #cce0ff;
+      font-size: 14px;
+    }
+
+    nav ul a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #1e3a5f, #2563eb);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px 70px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #cce0ff;
+      margin-bottom: 6px;
+    }
+
+    .hero .location {
+      font-size: 14px;
+      color: #99c2ff;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .btn-white {
+      background: #fff;
+      color: #1e3a5f;
+    }
+
+    .btn-white:hover {
+      background: #e0eeff;
+      text-decoration: none;
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.1);
+      text-decoration: none;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    section h2 {
+      font-size: 28px;
+      color: #1e3a5f;
+      margin-bottom: 8px;
+      border-left: 4px solid #2563eb;
+      padding-left: 12px;
+    }
+
+    .section-subtitle {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 30px;
+      padding-left: 16px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-text p {
+      color: #555;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .stat-box {
+      background: #fff;
+      border: 1px solid #dde3f0;
+      border-radius: 8px;
+      padding: 18px 24px;
+      text-align: center;
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .stat-box .num {
+      font-size: 28px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+
+    .stat-box .label {
+      font-size: 13px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .skill-row {
+      background: #fff;
+      border: 1px solid #dde3f0;
+      border-radius: 8px;
+      padding: 16px 20px;
+    }
+
+    .skill-row h3 {
+      font-size: 14px;
+      color: #1e3a5f;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: #e8f0fe;
+      color: #1e3a5f;
+      font-size: 13px;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #fff;
+      border: 1px solid #dde3f0;
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .project-card h3 {
+      font-size: 18px;
+      color: #1e3a5f;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      color: #555;
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .project-link {
+      font-size: 14px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+
+    /* ===== EXPERIENCE ===== */
+    .experience-card {
+      background: #fff;
+      border: 1px solid #dde3f0;
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .experience-card h3 {
+      font-size: 18px;
+      color: #1e3a5f;
+    }
+
+    .experience-card .company {
+      color: #2563eb;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .experience-card ul {
+      padding-left: 20px;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .experience-card ul li {
+      margin-bottom: 6px;
+    }
+
+    /* ===== CERTIFICATIONS ===== */
+    .certs-list {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cert-card {
+      background: #fff;
+      border: 1px solid #dde3f0;
+      border-radius: 8px;
+      padding: 20px 24px;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .cert-card .issuer {
+      font-size: 12px;
+      color: #2563eb;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .cert-card .cert-name {
+      font-size: 15px;
+      color: #1e3a5f;
+      font-weight: bold;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-box {
+      background: #1e3a5f;
+      color: #fff;
+      border-radius: 10px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .contact-box p {
+      color: #cce0ff;
+      margin-bottom: 24px;
+      font-size: 16px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .contact-links a {
+      color: #99c2ff;
+      font-size: 14px;
+    }
+
+    .contact-links a:hover {
+      color: #fff;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #999;
+      font-size: 13px;
+      background: #fff;
+      border-top: 1px solid #dde3f0;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      border: none;
+      border-top: 1px solid #dde3f0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 600px) {
+      nav ul { gap: 14px; }
+      .hero h1 { font-size: 30px; }
+      .stats-row { flex-direction: column; }
+      .certs-list { flex-direction: column; }
+      .contact-box { padding: 28px 18px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <span class="logo">Himanshu Sharma</span>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Himanshu Sharma</h1>
+  <p>Frontend Developer · JavaScript Developer · BCA Graduate</p>
+  <div class="location">📍 Indore, Madhya Pradesh, India</div>
+  <div class="hero-buttons">
+    <a href="#contact" class="btn btn-white">Get in Touch</a>
+    <a href="#projects" class="btn btn-outline-white">View Projects</a>
+  </div>
+</div>
+
+<hr class="divider" />
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p class="section-subtitle">Who I am and what I do</p>
+  <div class="about-text">
+    <p>I'm a <strong>BCA student</strong> at Government Holkar Science College, Indore, graduating in July 2026.</p>
+    <p>I have hands-on experience with <strong>Java (Core)</strong>, SQL, and frontend web technologies. I enjoy building logical programs and designing clean web interfaces.</p>
+    <p>I completed an internship at <strong>Dhanvantri Infra Sol Pvt. Ltd.</strong>, where I analyzed and documented a live food ordering web application and wrote detailed technical reports.</p>
+    <p>I'm actively building frontend projects, currently learning the MERN stack, and looking for my first full-time Software or Frontend Developer role.</p>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="num">2+</div>
+      <div class="label">Years of Study</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">3</div>
+      <div class="label">Projects Built</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">2</div>
+      <div class="label">Certifications</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">1</div>
+      <div class="label">Internship</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <p class="section-subtitle">Technologies and tools I work with</p>
+  <div class="skills-list">
+
+    <div class="skill-row">
+      <h3>Programming Languages</h3>
+      <div class="tags">
+        <span class="tag">Java (Core)</span>
+        <span class="tag">C</span>
+        <span class="tag">C++</span>
+        <span class="tag">Basic Python</span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <h3>Java Concepts</h3>
+      <div class="tags">
+        <span class="tag">OOP</span>
+        <span class="tag">Classes & Objects</span>
+        <span class="tag">Inheritance</span>
+        <span class="tag">Encapsulation</span>
+        <span class="tag">Scanner Input</span>
+        <span class="tag">Menu-driven Logic</span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <h3>Web Technologies</h3>
+      <div class="tags">
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS3</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">DOM Manipulation</span>
+        <span class="tag">Fetch API</span>
+        <span class="tag">Async JavaScript</span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <h3>Database</h3>
+      <div class="tags">
+        <span class="tag">SQL</span>
+        <span class="tag">SELECT / INSERT</span>
+        <span class="tag">UPDATE / DELETE</span>
+        <span class="tag">JOIN</span>
+        <span class="tag">GROUP BY</span>
+        <span class="tag">DBMS Fundamentals</span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <h3>Tools & Platforms</h3>
+      <div class="tags">
+        <span class="tag">Git</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">MS Excel</span>
+        <span class="tag">MS Word</span>
+        <span class="tag">Google Sheets</span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <h3>Soft Skills</h3>
+      <div class="tags">
+        <span class="tag">Problem Solving</span>
+        <span class="tag">Documentation</span>
+        <span class="tag">Teamwork</span>
+        <span class="tag">Analytical Thinking</span>
+        <span class="tag">Quick Learner</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <p class="section-subtitle">Things I've built or worked on</p>
+  <div class="projects-list">
+
+    <div class="project-card">
+      <h3>Personal Portfolio Website</h3>
+      <div class="tags" style="margin-bottom: 12px;">
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS3</span>
+      </div>
+      <p>Designed and developed a fully responsive personal portfolio website from scratch. Applied CSS Grid and Flexbox for layouts across desktop and mobile. Hosted on GitHub Pages.</p>
+      <a href="https://himanshusharma-ds.github.io" target="_blank" class="project-link">🔗 View Live →</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Spotify Clone</h3>
+      <div class="tags" style="margin-bottom: 12px;">
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS3</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Fetch API</span>
+      </div>
+      <p>Built a responsive Spotify-inspired music player using HTML, CSS, and JavaScript. Implemented dynamic song loading using the Fetch API along with play/pause, next/previous track controls, seek bar, volume control, and a responsive interface using Flexbox and CSS Grid.</p>
+      <a href="https://github.com/HimanshuSharma-DS" target="_blank" class="project-link">🔗 GitHub Repository →</a>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Internship</h2>
+  <p class="section-subtitle">My work experience</p>
+  <div class="experience-card">
+    <h3>IT Intern</h3>
+    <p class="company">Dhanvantri Infra Sol Pvt. Ltd. · 2026</p>
+    <ul>
+      <li>Analyzed and documented the complete frontend structure of a live food ordering web application</li>
+      <li>Prepared a detailed technical report covering UI/UX layout, navigation flow, and design components</li>
+      <li>Applied HTML5 and CSS3 knowledge to evaluate responsive design and page structure</li>
+      <li>Developed strong technical documentation and report writing skills</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <h2>Certifications</h2>
+  <p class="section-subtitle">Verified credentials</p>
+  <div class="certs-list">
+    <div class="cert-card">
+      <div class="issuer">HackerRank</div>
+      <div class="cert-name">Java Basic Certificate</div>
+    </div>
+    <div class="cert-card">
+      <div class="issuer">HackerRank</div>
+      <div class="cert-name">SQL Basic Certificate</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="section-subtitle">Let's connect</p>
+  <div class="contact-box">
+    <p>I'm actively looking for my first full-time IT role. If you have an opportunity or just want to say hello, feel free to reach out!</p>
+    <a href="mailto:himanshu121sharma121@gmail.com" class="btn btn-white">📧 Send an Email</a>
+    <div class="contact-links">
+      <a href="mailto:himanshu121sharma121@gmail.com">himanshu121sharma121@gmail.com</a>
+      <a href="https://linkedin.com/in/contacthimanshusharma" target="_blank">LinkedIn →</a>
+      <a href="https://github.com/HimanshuSharma-DS" target="_blank">GitHub →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Himanshu Sharma · Built with HTML5 & CSS3</p>
+</footer>
+
+</body>
+</html>
